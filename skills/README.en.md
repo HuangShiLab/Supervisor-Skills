@@ -1,4 +1,4 @@
-# Skills: a reader's guide to the eleven executable skills
+# Skills: a reader's guide to the seventeen executable skills
 
 English · [中文](README.md)
 
@@ -12,14 +12,14 @@ Supervisor-Skills is layered by audience:
 |---|---|---|
 | Top-level [`README.en.md`](../README.en.md) | First-time visitors | Why the project exists, tutorial structure, how to install |
 | [`handbook/`](../handbook/) (Chinese, canonical) / [`handbook-en/`](../handbook-en/) (English mirror) | Readers who want the methodology | Six chapters of research and writing handbook (the theoretical spine) |
-| **This file** | Readers who want the skills directly | **What each of the 11 skills is, when to use it, how it chains with the others** |
+| **This file** | Readers who want the skills directly | **What each of the 17 skills is, when to use it, how it chains with the others** |
 | `SKILL.md` (inside each skill directory) | Agent runtimes / LLMs | Executable spec: integrity gates, output formats, mode options — machine-readable, not optimised for human browsing |
 
 In one line: **the handbook teaches the way, SKILL.md runs the tool, this README is the bridge between them.**
 
 ## Two narrative tracks: technical paper vs benchmark paper
 
-The eleven skills are not isolated tools. They map to two complete lifecycles of a top-venue paper and add survey-grade research, evidence-gated drafting and polishing, and an execution-oriented Draw.io reconstruction capability. Locate yourself on the right track first, then pick the skill you need.
+The seventeen skills are not isolated tools. They map to two complete lifecycles of a top-venue paper and add survey-grade research, evidence-gated drafting and polishing, and an execution-oriented Draw.io reconstruction capability. Locate yourself on the right track first, then pick the skill you need.
 
 ### Track 1: technical / position paper (new method for an existing problem)
 
@@ -38,6 +38,11 @@ Following the natural order a PhD student takes for their first top-venue paper:
 
 - [deep-research](deep-research/SKILL.md) — survey-grade literature investigation, usable before topic selection or at any point while writing: multi-perspective search, per-citation verification, a report that answers explicit research questions
 - [vibe-research-workflow](vibe-research-workflow/SKILL.md) — whether you are coding, drawing, or writing at any stage, it gives you AI-collaboration rules and tool picks
+- [supervisor](supervisor/SKILL.md) — turn a goal into a recoverable ledger, keep working across units, and block premature delivery
+- [delivery-evidence-audit](delivery-evidence-audit/SKILL.md) — connect comments, source tables, rendered panels, and raw-data provenance into one auditable chain
+- [supervisor-review](supervisor-review/SKILL.md) — run the final binary release gate across scope, evidence, rendered output, and reproducibility
+- [project-experience-codifier](project-experience-codifier/SKILL.md) — turn repeated project failures into reusable incident records, gates, and skills
+- [computational-method-release-audit](computational-method-release-audit/SKILL.md) — audit a method claim together with its code, truth set, benchmark, and archive release
 
 ### Track 2: benchmark / evaluation paper
 
@@ -59,8 +64,13 @@ Readers with a specific bottleneck can skip the reading order and jump straight 
 - Pre-submission panic, unclear what to check → **pre-submission-reviewer**
 - Cannot articulate the benchmark gap or organise evaluation dimensions → **benchmark-paper-template**
 - Unsure how to delegate to AI without diluting academic judgment → **vibe-research-workflow**
+- A long task keeps losing state or is declared done too early → **supervisor**
+- After annotated edits, worried that claims, figures, tables, and raw data disagree → **delivery-evidence-audit**
+- A package is about to be called final and needs a hard release gate → **supervisor-review**
+- The same correction keeps returning and should become a reusable rule → **project-experience-codifier**
+- A computational tool paper must be checked as one method-and-release system → **computational-method-release-audit**
 
-## The eleven skill cards
+## The seventeen skill cards
 
 Each card translates the SKILL.md spec into plain-reader language, adds the matching handbook chapters, and notes the upstream/downstream skills.
 
@@ -185,6 +195,52 @@ Each card translates the SKILL.md spec into plain-reader language, adds the matc
 - **Matching handbook chapters**: [3.5 Writing details and checklist](../handbook-en/03_Paper_Writing/3.5_writing-details-and-checklist.md) · [1.1 How to evaluate paper quality](../handbook-en/01_Preliminary/1.1_how-to-evaluate-paper-quality.md)
 - **Upstream**: the endpoint of the technical-paper track; also the endpoint of the benchmark-paper track.
 
+### supervisor — execution support for long research tasks
+
+- **Positioning**: converts an explicit goal into an external ledger, recoverable task units, and a binary delivery gate.
+- **When to trigger**: continuous work is requested, work resumes after interruption, or a previous delivery was premature.
+- **Core rule**: every task has a persistent artifact and acceptance criterion; blockers include recovery attempts; no final report until the delivery gate passes.
+- **Output**: a task ledger, progress report, blocker list, and one consolidated decision request.
+
+### delivery-evidence-audit — evidence-chain audit after annotated revisions
+
+- **Positioning**: audits final consistency across source tables, prose, figures, rendered artifacts, and raw-data provenance.
+- **When to trigger**: comments or tracked changes arrive; figures are split, merged, renumbered, or re-rendered; a package is about to be released.
+- **Core rule**: disposition comments by ID, trace numbers to source tables, separate statistical families, verify rendered panels, and trace raw-input provenance.
+- **Output**: per-item dispositions, mandatory repairs, data availability states, and a final evidence checklist.
+
+### supervisor-review — the final binary release gate
+
+- **Positioning**: a hard release gate for the exact package the user will receive.
+- **When to trigger**:
+  - The work is about to be called complete or submission-ready.
+  - A prior review found a missed figure, stale table, unanswered comment, or broken release path.
+  - A revised document, benchmark package, figure set, or repository change must be certified before handoff.
+- **Core rule**: inspect the frozen packet, disposition every feedback item, reconcile prose and source evidence, open rendered artifacts, and execute the clean release path. Any mandatory failure returns `BLOCKED`.
+- **Output**: `READY` or `BLOCKED`, failed gate IDs, evidence pointers, unresolved feedback IDs, and the minimum repair path.
+- **How it fits**: `delivery-evidence-audit` inspects the evidence chain during revision; `supervisor-review` is the final gate after repairs and package freeze.
+
+### project-experience-codifier — turn repeated failures into reusable rules
+
+- **Positioning**: a meta-skill that converts incident history into transferable execution knowledge.
+- **When to trigger**:
+  - The same correction appears across reviews, releases, benchmarks, or collaborators.
+  - A postmortem contains useful mechanism but no enforceable gate.
+  - A project-specific checklist should become a reusable skill without leaking private context.
+- **Core rule**: preserve trigger, expected state, actual state, missed signal, repair, and evidence; merge incidents by root cause; promote a lesson only when it changes a decision and has a binary check.
+- **Output**: an experience matrix, root-cause groups, candidate skills, non-overlap decisions, and an implementation plan.
+
+### computational-method-release-audit — audit method, benchmark, and release together
+
+- **Positioning**: a domain gate for method, tool, benchmark, and software-note releases.
+- **When to trigger**:
+  - Accuracy, sensitivity, runtime, scalability, prevalence, retrieval, or assay claims must be released.
+  - A method paper has paired code, truth sets, comparators, full result tables, and biological interpretation.
+  - Reviewers may ask whether source-present retrieval was confused with held-out generalization or aggregate prevalence with named-taxa interpretation.
+- **Core rule**: freeze a claim register, pin software and inputs, audit benchmark denominators and comparator spaces, separate metric agreement from event and coordinate recovery, map biological groups, and verify availability identifiers.
+- **Output**: a claim-by-claim evidence map, PASS or BLOCKER gates, minimum repair path, and companion-paper candidates.
+- **How it fits**: use before `supervisor-review` for a computational release; both gates must pass before final delivery.
+
 ### vibe-research-workflow — the always-on rules for AI-assisted research
 
 - **Positioning**: a full-lifecycle guide for AI-assisted research, covering three sub-flows: Vibe Coding, Vibe Figure, Vibe Writing.
@@ -196,7 +252,7 @@ Each card translates the SKILL.md spec into plain-reader language, adds the matc
 - **Core principle**: **keep academic judgment in the human's hands, delegate mechanical labour to AI**; every AI output must come with checkable evidence; tool picks are per task type with a concrete shortlist.
 - **Output**: a recommended tool chain for the current scenario, a human-AI division-of-labour sketch, and a common-failure-mode catalogue.
 - **Matching handbook chapters**: [5.1 Vibe Research and Vibe Coding primer](../handbook-en/05_Vibe_Research/5.1_vibe-research-and-vibe-coding.md) · [5.2 Practitioner notes](../handbook-en/05_Vibe_Research/5.2_liboyan-practical-notes.md)
-- **How it fits**: **orthogonal** to the other ten skills. It is not step N; it is a rulebook you pull up at any step. Drafting requests are legitimate: they route to paper-writer / intro-drafter, whose evidence discipline forbids fabricated substance; disclosure and per-passage verification duties stay with the author.
+- **How it fits**: **orthogonal** to the lifecycle-specific skills. It is not step N; it is a rulebook you pull up at any step. Drafting requests are legitimate: they route to paper-writer / intro-drafter, whose evidence discipline forbids fabricated substance; disclosure and per-passage verification duties stay with the author.
 
 ## How to actually use these skills
 
@@ -239,6 +295,11 @@ Each skill's `references/` directory carries on-demand depth. For example, `idea
 | drawio-reconstruction | 4.4 / VCG-Bench |
 | pre-submission-reviewer | 3.5 / 1.1 |
 | vibe-research-workflow | 5.1 / 5.2 |
+| supervisor | Execution layer: project ledger, work loop, and delivery review (no single handbook chapter) |
+| delivery-evidence-audit | Execution layer: source-table, rendered-panel, and provenance audit (extends 3.5 / 4.4) |
+| supervisor-review | Execution layer: final release gate (extends 3.5 / 4.4 and release practice) |
+| project-experience-codifier | Execution layer: incident-to-skill conversion (extends 5.1 / 5.2 practice) |
+| computational-method-release-audit | Execution layer: method, benchmark, truth-set, and archive audit (extends 3.4 / 3.5) |
 
 **Recommended reading order: read the handbook once to build intuition about the "way", then come back to this README to pick the skill for your scenario; leave execution to SKILL.md.**
 

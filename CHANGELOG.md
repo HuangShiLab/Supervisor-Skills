@@ -12,6 +12,24 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   `sxy1499894281/drawio-reconstruction-skill`, for reconstructing
   reference images into editable Draw.io files with PNG previews and
   visual audits.
+- Added `supervisor`, an execution-layer skill for an explicit goal,
+  external task ledger, continuous work loop, blocker recovery, and
+  binary delivery review.
+- Added `delivery-evidence-audit`, an execution-layer skill for
+  numbered reviewer-comment intake, tracked-change reconstruction,
+  claim-to-source reconciliation, statistical-family separation,
+  rendered-panel integrity, supplementary-table ordering, and
+  raw-data provenance.
+- Added `supervisor-review`, a final binary release gate for frozen
+  packages, feedback dispositions, claim-to-source consistency,
+  rendered artifacts, and clean-checkout reproducibility.
+- Added `project-experience-codifier`, a meta-skill for converting
+  recurring project incidents into root-cause records, binary gates,
+  and reusable skill architecture without leaking private context.
+- Added `computational-method-release-audit`, a domain gate that
+  audits method claims together with software versions, truth-set
+  scope, benchmark denominators, comparator spaces, event-level
+  evidence, biological mappings, and archived code/data releases.
 - Three skills ported back from our Doubao adaptation practice, where
   they were built and field-tested (all original content):
   - `paper-writer`: evidence-gated drafting of any section or a full

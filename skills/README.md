@@ -12,14 +12,14 @@ Supervisor-Skills 的内容被分成三层，各有各的读者：
 |---|---|---|
 | 顶层 [`README.md`](../README.md) | 第一次打开项目的人 | 为什么做这个项目、教程结构、怎么装 |
 | [`handbook/`](../handbook/) | 想系统学方法论的人 | 六章科研与写作系统指南（理论主轴） |
-| **本文件** | 想直接上手技能的人 | 11 个技能**分别是什么、什么时候用、怎么接龙** |
+| **本文件** | 想直接上手技能的人 | 17 个技能**分别是什么、什么时候用、怎么接龙** |
 | `SKILL.md`（每个技能目录内） | Agent runtime / LLM | 可执行规范：完整性核查、输出格式、模式选项（机器可读，人看有点累） |
 
 一句话：**handbook 教"道"，SKILL.md 跑"器"，本 README 是"道器之间的桥"。**
 
 ## 两条主线：技术论文 vs Benchmark 论文
 
-11 个技能不是一堆孤立工具，它们对应两条完整的论文生命周期，并补上研究侧的深度调研、产出侧的正文写作与润色，以及 Draw.io 重建这一类执行型作图能力。先定位自己在写哪种论文，再决定从哪个技能入手。
+17 个技能不是一堆孤立工具，它们对应两条完整的论文生命周期，并补上研究侧的深度调研、产出侧的正文写作与润色，以及执行层审计与交付门禁。先定位自己在写哪种论文，再决定从哪个技能入手。
 
 ### 主线一：技术类 / 立场类论文（新方法解决已有问题）
 
@@ -38,6 +38,11 @@ Supervisor-Skills 的内容被分成三层，各有各的读者：
 
 - [deep-research](deep-research/SKILL.md) — 选题前或写作中随时可用的综述级文献调研：多视角检索、逐条引用核验、回答明确研究问题的 survey 报告
 - [vibe-research-workflow](vibe-research-workflow/SKILL.md) — 无论你正在写代码、画图还是写文字，它都会给你 AI 协作的行为规则与工具选择建议
+- [supervisor](supervisor/SKILL.md) — 把目标拆成可恢复台账，驱动连续工作并阻止过早交付
+- [delivery-evidence-audit](delivery-evidence-audit/SKILL.md) — 把批注、源表、图表面板和数据来源连成一条可审计证据链
+- [supervisor-review](supervisor-review/SKILL.md) — 在交付前执行范围、证据、渲染产物和可复现性的二值门禁
+- [project-experience-codifier](project-experience-codifier/SKILL.md) — 把重复项目教训转化为事故记录、检查项和可复用技能
+- [computational-method-release-audit](computational-method-release-audit/SKILL.md) — 把方法主张、代码、truth set、benchmark 和数据归档作为同一系统审计
 
 ### 主线二：Benchmark / Evaluation 类论文
 
@@ -59,8 +64,13 @@ Benchmark 管线比技术论文更强调阶段先后，每个环节都要先于�
 - 投稿前慌，不知道该查什么 → **pre-submission-reviewer**
 - Benchmark 的 gap 说不清、评估维度理不顺 → **benchmark-paper-template**
 - AI 辅助科研的规则拿不准 → **vibe-research-workflow**
+- 长任务经常中断或提前宣布完成 → **supervisor**
+- 批注修订后担心图、表、结论和原始数据不一致 → **delivery-evidence-audit**
+- 包即将称为 final，需要硬性交付检查 → **supervisor-review**
+- 同一类问题反复出现，应转化为可复用规则 → **project-experience-codifier**
+- 计算方法论文要同时审计方法、benchmark 和发布链路 → **computational-method-release-audit**
 
-## 11 张技能卡片
+## 17 张技能卡片
 
 每张卡把 SKILL.md 的严谨定义翻译成"人话"，附带配套的 handbook 章节以及与其它技能的接龙关系。
 
@@ -185,6 +195,52 @@ Benchmark 管线比技术论文更强调阶段先后，每个环节都要先于�
 - **对应 handbook 章节**：[3.5 写作细节与 Checklist](../handbook/03_Paper_Writing/3.5_写作细节与Checklist.md) · [1.1 如何评价一篇论文的质量](../handbook/01_Preliminary/1.1_如何评价一篇论文的质量.md)
 - **上游**：技术论文主线的终点；Benchmark 论文主线的终点。
 
+### supervisor — 长周期科研任务的执行副导师
+
+- **定位**：把一个明确目标拆成外置台账、可恢复任务和二值交付检查。
+- **什么时候触发**：用户要求持续工作直到交付；任务跨会话；先前的决定只留在对话记忆里。
+- **核心规则**：每个任务有持久工件和验收条件；阻塞必须记录恢复尝试；交付检查未通过就不能报告完成。
+- **产出**：任务台账、进度报告、阻塞清单和一次性决策请求。
+
+### delivery-evidence-audit — 批注修订后的证据链审计
+
+- **定位**：在源表、正文、图表、渲染文件和原始数据之间审计最终一致性。
+- **什么时候触发**：收到 comments 或 tracked changes；图被拆分、合并、重编号或重渲染；文档或仓库即将发布。
+- **核心规则**：批注编号处置；关键数字回到源表；不同统计 family 分开；渲染图包含 caption 的每个 panel；原始文件、转换软件和 checksum 可追溯。
+- **产出**：逐条 disposition 表、必须修复清单、数据状态和交付检查结果。
+
+### supervisor-review — 最终交付的二值门禁
+
+- **定位**：审查用户真正会收到的 frozen package，而不是只检查源文件。
+- **什么时候触发**：
+  - 工作即将被称为 complete、submission-ready 或 final
+  - 此前出现过漏图、旧表、未回答批注、渲染不一致或 clean checkout 失败
+  - 修订 DOCX、benchmark 包、图集或仓库变更要在交付前认证
+- **核心规则**：冻结审查包；逐条处置 feedback；正文、源表、图表和渲染文件对齐；打开最终渲染产物；从 clean checkout 执行发布路径。任何必查项失败即 `BLOCKED`。
+- **产出**：`READY` 或 `BLOCKED`、失败 gate ID、证据指针、未解决 feedback ID 和最小修复路径。
+- **接龙**：`delivery-evidence-audit` 在修订中审计证据链；`supervisor-review` 在修复完成后做最终放行。
+
+### project-experience-codifier — 把重复教训炼成可复用规则
+
+- **定位**：将事故史转化为可迁移的执行知识。
+- **什么时候触发**：
+  - 同一类修正跨项目、跨审稿或跨交付反复出现
+  - 复盘有机制但缺少可执行 gate
+  - 项目专用 checklist 要变成可复用 skill，同时不泄漏私有信息
+- **核心规则**：记录 trigger、expected、actual、missed signal、repair 和证据；按 root cause 合并；只有改变决策、可二值检查且不重复现有技能时才升级为 skill。
+- **产出**：experience matrix、root-cause 分组、候选 skill、非重叠判断和实施计划。
+
+### computational-method-release-audit — 方法、benchmark 与发布一体化审计
+
+- **定位**：面向 method、tool、benchmark 和 software note 的领域门禁。
+- **什么时候触发**：
+  - accuracy、sensitivity、runtime、scalability、prevalence、retrieval 或 assay 主张要发布
+  - 方法论文同时包含代码、truth set、comparator、全量结果表和生物学解释
+  - 审稿人可能追问 source-present 是否被当作 held-out，或 aggregate prevalence 是否被当作 named-taxon 结论
+- **核心规则**：冻结 claim register；pin 软件和输入；审计 benchmark denominator 与 comparator space；区分 metric agreement、event presence 和 coordinate recovery；映射生物学 group；确认 availability identifier 可解析。
+- **产出**：claim-by-claim evidence map、PASS/BLOCKER gate、最小修复路径和 companion-paper 候选。
+- **接龙**：在 `supervisor-review` 之前执行；两者都通过才能交付计算方法包。
+
 ### vibe-research-workflow — 贯穿始终的 AI 协作行为守则
 
 - **定位**：AI 辅助科研的全流程指南，覆盖三条子流水线——Vibe Coding、Vibe Figure、Vibe Writing。
@@ -196,7 +252,7 @@ Benchmark 管线比技术论文更强调阶段先后，每个环节都要先于�
 - **核心原则**：**学术判断保留在人手里，把机械劳动交给 AI**；每次 AI 产出都要有明确的可复核证据；工具选型按任务类型落到具体清单。
 - **产出**：当前场景的推荐工具链、人机分工示意、常见失败模式对照表。
 - **对应 handbook 章节**：[5.1 Vibe Research 与 Vibe Coding 入门](../handbook/05_Vibe_Research/5.1_Vibe_Research与Vibe_Coding入门.md) · [5.2 实战经验分享](../handbook/05_Vibe_Research/5.2_李伯岩实战经验分享与会议纪要.md)
-- **用法特点**：与其它十个技能**正交**。不是第 N 步，而是你走每一步时都可以随时调用的协作规则。写作类请求（起草正文）是合法的：转给 paper-writer / intro-drafter，它们的证据纪律保证不编造实质内容；披露义务与逐段核验义务不变。
+- **用法特点**：与生命周期专用技能**正交**。不是第 N 步，而是你走每一步时都可以随时调用的协作规则。写作类请求（起草正文）是合法的：转给 paper-writer / intro-drafter，它们的证据纪律保证不编造实质内容；披露义务与逐段核验义务不变。
 
 ## 怎么用这些技能
 
@@ -215,6 +271,11 @@ Benchmark 管线比技术论文更强调阶段先后，每个环节都要先于�
 - "投稿前帮我审一遍 / 做最后的 final pass" → `pre-submission-reviewer`
 - "我想写一个 Benchmark 论文 / 我在做 evaluation" → `benchmark-paper-template`
 - "怎么用 AI 辅助我做研究" → `vibe-research-workflow`
+- "继续工作直到完成 / 恢复上次任务" → `supervisor`
+- "审阅批注后检查证据、图表面板和数据来源" → `delivery-evidence-audit`
+- "这个包能不能交付 / 做最终 release gate" → `supervisor-review`
+- "把重复失败变成 skill 或 checklist" → `project-experience-codifier`
+- "审计计算方法、benchmark 和代码发布" → `computational-method-release-audit`
 
 ### 不安装也能用
 
@@ -239,6 +300,11 @@ Benchmark 管线比技术论文更强调阶段先后，每个环节都要先于�
 | drawio-reconstruction | 4.4 / VCG-Bench |
 | pre-submission-reviewer | 3.5 / 1.1 |
 | vibe-research-workflow | 5.1 / 5.2 |
+| supervisor | 执行层：科研项目的台账、循环与交付检查（无单一 handbook 章节） |
+| delivery-evidence-audit | 执行层：源表、图表面板和数据来源审计（扩展 3.5 / 4.4） |
+| supervisor-review | 执行层：最终发布门禁（扩展 3.5 / 4.4 与交付实践） |
+| project-experience-codifier | 执行层：教训到技能的转化（扩展 5.1 / 5.2 实践） |
+| computational-method-release-audit | 执行层：方法、truth set、benchmark 与归档审计（扩展 3.4 / 3.5） |
 
 **阅读顺序建议：handbook 先读一遍建立"道"的直觉，再回到本 README 按技能挑场景使用；具体执行交给 SKILL.md。**
 

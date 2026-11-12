@@ -130,6 +130,11 @@ Supervisor-Skills/
 │   ├── idea-evaluator/                # 构思与调研阶段技能
 │   ├── deep-research/
 │   ├── vibe-research-workflow/
+│   ├── supervisor/
+│   ├── delivery-evidence-audit/
+│   ├── supervisor-review/
+│   ├── project-experience-codifier/
+│   ├── computational-method-release-audit/
 │   ├── tech-paper-template/           # 写作阶段技能
 │   ├── intro-drafter/
 │   ├── paper-writer/
@@ -166,6 +171,11 @@ Supervisor-Skills/
 |---|---|---|
 | **Idea Evaluator** | 输入你的 Idea，AI 将根据"更高更快更强"5维框架和能力匹配表进行客观评估与打分 | [使用技能](skills/idea-evaluator/SKILL.md) |
 | **Vibe Research Guide** | AI 辅助科研全流程指导：Vibe Coding / Vibe Figure / Vibe Writing | [使用技能](skills/vibe-research-workflow/SKILL.md) |
+| **Supervisor** | 把长周期科研任务拆成外置台账、连续工作循环和交付前二值检查，防止中途丢状态或提前宣布完成 | [使用技能](skills/supervisor/SKILL.md) |
+| **Delivery Evidence Audit** | 审查结论、源表、图表面板、补充材料编号和原始数据/转换链路的一致性，并逐条处置批注与修订 | [使用技能](skills/delivery-evidence-audit/SKILL.md) |
+| **Supervisor Review** | 在最终交付前执行 frozen package、feedback disposition、证据一致性和 clean-checkout 的二值发布门禁 | [使用技能](skills/supervisor-review/SKILL.md) |
+| **Project Experience Codifier** | 把重复事故、审稿发现和 benchmark 陷阱转化为 incident record、binary gate 和可复用 skill | [使用技能](skills/project-experience-codifier/SKILL.md) |
+| **Computational Method Release Audit** | 一体化审计方法主张、truth set、benchmark comparator、event-level validation、taxonomy mapping 和代码/数据归档 | [使用技能](skills/computational-method-release-audit/SKILL.md) |
 | **Introduction Drafter** | 基于 Introduction 的 Flowchart 思考模型，输入研究动机，直接产出六段式 Intro 正文（引用经真实检索核验；也可只要大纲） | [使用技能](skills/intro-drafter/SKILL.md) |
 | **Paper Writer** | 证据门控的论文正文写作：从单段到整篇，每个事实性声明可溯源到你的材料或核验过的文献，引用经独立核查，绝不编造 | [使用技能](skills/paper-writer/SKILL.md) |
 | **Paper Polish** | 忠于原意的语言润色：改语法、去 AI 腔、把握措辞分寸、中文稿改写为投稿级英文，可能动到含义的改动逐条标出请你确认 | [使用技能](skills/paper-polish/SKILL.md) |
