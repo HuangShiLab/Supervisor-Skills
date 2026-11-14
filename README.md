@@ -1,157 +1,83 @@
-<div align="center">
+# Supervisor-Skills（HuangShiLab 维护版）
 
-<img src="assets/icon.png" alt="Supervisor-Skills" height="240" />
+本仓库为 [黄适（Shi Huang）](https://github.com/shihuang)（香港大学牙科学院，[HuangShiLab](https://github.com/HuangShiLab)）维护的 fork，面向本实验室的科研写作、数据分析与项目管理场景。
 
-</div>
+**上游来源**：本项目 fork 自 [HKUSTDial/Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills)（骆昱宇，香港科技大学（广州）），上游内容以 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议开源，版权归 Yuyu Luo 及 HKUSTDial 团队所有，感谢吴垠、李伯岩、谢宇鹏对上游仓库的贡献。上游的 `handbook/` 与 `skills/` 下标注为原有的技能全部保留可用，其详细介绍见上游 README，此处不再复制。
 
-# Supervisor-Skills: 将博导十年科研经验，炼化为你的 AI 副导师。
+## 为什么做这个 fork
 
-[English](README.en.md) · 中文
+先向上游致敬。骆昱宇教授发起这个项目时写下的动机，我几乎每一句都有共鸣：带学生、做评审这些年，我见过的是同一组困境——学生读遍"科研指南"面对自己的课题仍不知如何下笔；导师时间有限，没法对每个想法及时给出细致评估；论文写完，不确定逻辑是否严密、图表是否合格、行文有没有低级错误；以及 AI 时代的"能力鸿沟"——没有判断力和学术品味，再强的模型也只是高级玩具。骆教授的贡献在于把这个共识变成了可执行的技能框架，并把方法论系统地蒸馏出来。
 
-<p align="center">
-  <a href="https://github.com/HKUSTDial/Supervisor-Skills/stargazers"><img src="https://img.shields.io/github/stars/HKUSTDial/Supervisor-Skills?style=flat-square&logo=github" alt="GitHub stars"></a>
-  <a href="https://github.com/HKUSTDial/Supervisor-Skills/network/members"><img src="https://img.shields.io/github/forks/HKUSTDial/Supervisor-Skills?style=flat-square&logo=github" alt="GitHub forks"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey?style=flat-square" alt="License"></a>
-</p>
+但我自己的工作经验和他的不完全重叠，这正是我做 fork 而不是只用上游的原因。我在微生物组/宏基因组领域做干湿结合的研究：真实样品处理、宿主污染控制、株水平检测、benchmark 设计（2bRAD-M、Strain2bScan 这条线），同时承担期刊评审和企业合作的技术分析项目。这类项目里的坑有自己的形状：项目初期定下的总体框架执行中被反复遗忘；中间过程记录混进论文正文；关键结果在逻辑上撑不起关键结论，却被静默略过；AI 干一步停一步，跨会话就丢工作思路。这些教训不在任何通用科研指南里，只存在于自己的项目复盘中。
 
-## 📰 News
-
-> - **[2026-11-05]** 🎓 Supervisor 系列续作 **[Ducktor](https://github.com/yinwu01/Ducktor)** 与 **[DeepSeek-Ducktor](https://github.com/yinwu01/DeepSeek-Ducktor)** 正式发布！🚀 在 vibe research 的浪潮下，Agent 替你推进研究，Ducktor 把每一步背后的科研判断讲给你，补全研究者的知识闭环 🔁，让 Agent 与你一起学习、协同进化 🌱。
-> - **[2026-09-21]** 🤝 Supervisor-Skills 与**百度**达成合作，作为专家深度嵌入**库库AI**平台，以「[**计算机科研专家 骆教授**](https://kuku.baidu.com/#/workbench/expert)」的形象呈现。
-> - **[2026-07-15]** 🤝 团队与**豆包**达成合作，Supervisor-Skills 正式作为**豆包·办公模式**的核心科研技能完成部署，驱动「**科研评估**」与「**学术创作**」两大官方能力，将本项目沉淀的科研方法论带给亿级用户。
-> - **[2026-07-10]** 🚀 **v2.1**：新增 `paper-writer`（证据门控的论文正文写作）、`paper-polish`（忠于原意的语言润色）、`deep-research`（综述级文献调研）三个技能；`intro-drafter` 升级为正文输出；评估与评审技能引入学科范式路由。详见 [CHANGELOG](CHANGELOG.md)。
-> - **[2026-07-03]** 🎤 受邀在 **2026 中国智能体大会** Skill 会场进行分享。
-> - **[2026-07-03]** 🧩 新增 `drawio-reconstruction` 技能：参考图一键重建为可编辑 Draw.io。
-> - **[2026-05-21]** ⭐ GitHub Star 突破 **1,000**（发布第 32 天）。
-> - **[2026-04-19]** 🎉 项目发布：七个锚点技能覆盖论文全生命周期，配套 handbook 系统课程。
+因此本 fork 的规则是：**上游的方法论框架原样保留；本实验室每次项目复盘得到的教训，持续蒸馏成新技能**——每个新技能都附真实反例档案，写明它从哪次失效中来、拦截机制加在哪一环。新增技能见下节。
 
 ---
 
-## 为什么做这个项目？
+## 核心：本 fork 新增技能
 
-大家好，我是[骆昱宇](https://luoyuyu.vip/)，香港科技大学（广州）的助理教授。从自己读博到指导学生，我反复看到一个场景：许多才华横溢的研究生，在踏入科研大门时，常常被相似的困境所困扰：
+### supervisor —— 持续工作协议 + 交付前审查
 
-*   **理论与实践脱节**：读了再多"科研指南"，面对自己的课题时，依旧不知如何下笔。
-*   **指导资源稀缺**：导师日程繁忙，无法对你萌生的每一个想法进行及时、细致的评估。
-*   **投稿前的迷茫**：论文写完，却不确定逻辑是否严密、图表是否符合顶会审美、行文是否暗含"低级错误"。
-*   **AI时代的"能力鸿沟"**：大模型很强大，但若缺乏判断力与学术品味，AI也只是"高级玩具"。**卓越的科研成果，无法仅靠“万能 Prompt”催生。**
+**解决什么问题**：多步骤项目（如软件论文的 benchmark 设计与写作）中，AI 经常交付即停、遗忘项目初期定下的总体框架、把中间过程当正文、对不支持结论的关键结果静默略过。
 
-这些挑战，共同构成了科研的 **"最后一公里问题" (The Last-Mile Problem)**。它不仅是方法论的缺失，更是经验、品味与判断力的综合考验。
+**怎么来的**：本实验室真实项目（Strain2bScan benchmark 等）复盘的 5 个反例，每个规则都能回溯到具体失效场景（见 `references/project-cases.md`）。
 
-为此，我发起了 Supervisor-Skills 项目。我们将过去十年在数据科学与人工智能顶级会议（如 SIGMOD, VLDB, ICML, NeurIPS）中积累的发表、审稿经验与学术直觉，进行"蒸馏"与"锻造"，最终封装成一套结构化的、可被大语言模型（如 Claude, GPT-4）精确执行的 **AI技能 (AI Skills)**。 我们的愿景很简单：**将资深科研者的隐性知识，转化为人人可用的 AI 工具，让 AI 成为你真正的、全天候在线的科研副导师**
+**机制**：
+- **持续工作**：工作台账外置到文件，每完成一项自动推进下一项；停止仅限四种白名单情形（全部完成 / 方向分叉需决策 / 技术阻塞 / 上下文水位），停止时必须输出恢复指引；
+- **交付前审查**：框架对照、叙事结构（每图必指认论点，禁止按分析顺序罗列）、过程记录隔离（commit 号、运行日志、GitHub 链接一律不进正文，判据：删掉不影响读者理解科学结论的就是过程记录）、结论-证据匹配（矛盾必须主动报告，禁止静默略过）、统计措辞（禁用 "trend" 描述非显著结果）；
+- **框架守卫**：项目总体设计（步骤、数据类型、评价指标、预期信号）持久化为文件，每次交付前对照，防止"提醒过一次又被遗忘"；
+- **Token 预算**：台账与中间产物落盘、先定位后读文件、80% 水位写交接快照、保留失败记录等 7 条上下文纪律。
 
-这个项目仍处在早期阶段，我们正努力将自己能力范围内的认知与见解毫无保留地呈现出来，希望能为初入科研领域的探索者提供一份实用的操作指南。我们更热切地期待，能与各位同行者一起，共同建设、完善这个知识库，让科研之路不再孤单。如果你觉得这个项目对你有帮助，请点亮右上角的⭐️Star⭐️！谢谢！
+### skill-hygiene —— skill 编写与质检规范
 
-## 社区与交流
+**解决什么问题**：skill 写得很长却触发不准、加载浪费 token、规则空洞不可执行——包括"提示词给了仓库 URL 但 skill 根本没被加载"这类部署层失效。
 
-**微信交流群**
+**怎么来的**：整合公开实证研究（SkillReducer 对 55,315 个公开 skill 的分析：26.4% 缺路由描述、正文平均 60%+ 不可执行；规范压缩后 token 降 39–48% 而质量反升）与 context engineering 实践，证据与出处见 `references/evidence.md`。
 
-群已超过 200 人，无法通过二维码直接入群。请扫码添加管理员微信 `xyp619`，备注 **"Supervisor-Skills + 姓名"**，由管理员邀请入群。
+**机制**：渐进式披露三级加载（description 只写"做什么+何时触发"、正文只放可执行规则、案例证据拆 references 并标注"何时读+关键词"）；三道质量门（忠实度 / 任务走查 / 瘦身门）；七项审查清单（含对上游贡献的协议与署名检查）。
 
-您也可以关注 **数据智能与分析实验室 DIAL 官方公众号** 与 **蟹哥聊科研**，获取科研资讯、论文写作经验、AI 前沿动态与科研工具分享。
+### stats-evidence-audit —— 统计证据审查
 
-加入后您可以：
-- 🔔 第一时间获取 Skills 与 Handbook 的最新更新通知
-- 💬 与同路人交流论文写作、AI 辅助科研心得
-- 🎙️ 参与不定期的线上答疑与经验分享活动
+**解决什么问题**：统计报告审查缺乏系统判据——伪重复、多重比较未校正、"trend" 包装非显著结果、只报 p 值不报效应量、图注缺统计要素，在微生物组数据（高维稀疏、组成性）中尤其高发。
 
-<table align="center">
-  <tr>
-    <td align="center" width="360">
-      <strong>微信交流群</strong>
-    </td>
-    <td align="center" width="360">
-      <strong>官方公众号</strong>
-    </td>
-    <td align="center" width="360">
-      <strong>科研分享号</strong>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" valign="middle" height="360">
-      <img src="assets/wechat-admin.JPG" height="300" />
-    </td>
-    <td align="center" valign="middle" height="360">
-      <img src="assets/wechat-official-account.jpg" height="280" />
-    </td>
-    <td align="center" valign="middle" height="360">
-      <img src="assets/wechat-xiebro-research.jpg" height="280" />
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <sub>添加管理员 xyp619，邀请入群交流</sub>
-    </td>
-    <td align="center">
-      <sub>数据智能与分析实验室 DIAL 官方公众号</sub>
-    </td>
-    <td align="center">
-      <sub>蟹哥聊科研：AI 前沿、论文与科研工具分享</sub>
-    </td>
-  </tr>
-</table>
+**怎么来的**：与 [nature-skills](https://github.com/Yuan1z0825/nature-skills)（Apache-2.0）对比发现的缺口，维度划分参考其 nature-statistics；具体规则自撰，依据 ASA p 值声明、SAMPL 报告规范、组成性数据与伪重复经典文献（见 `references/stats-sources.md`）。
 
-## 教程结构
+**机制**：8 项可判定审查维度（实验单位独立性、重复数定义、精确 p 值、多重比较校正、效应量与 CI、图注统计要素、跨章节数值一致性、阴性结果措辞）+ 统计小节起草规则；由 supervisor 审查清单第 5 条调用执行深度检查。
 
-本教程采用 **Guide（理论指南） + Skills（可执行AI技能）** 的双轨制架构：
+---
+
+## 更新日志
+
+| 日期 | 更新 |
+|---|---|
+| 2026-11-14 | 新增 `supervisor`（持续工作 + 交付审查 + Token 预算，含 5 个反例档案）；触发描述扩展至审稿场景；修复"停止白名单与 80% 水位规则冲突"（自审发现） |
+| 2026-11-14 | 新增 `skill-hygiene`（skill 编写与质检规范，基于 55k+ skill 实证研究与 context engineering 证据） |
+| 2026-11-14 | 新增 `stats-evidence-audit`（统计证据审查，补齐与 nature-skills 对比的缺口）；README 重写并增加"相关技能生态" |
+
+## 目录结构
 
 ```
 Supervisor-Skills/
-├── README.md                          # 本文件
-│
-├── handbook/                          # 📖 科研与写作系统指南
-│   ├── 01_Preliminary/                # 第一章：宏观认识与评价
-│   │   ├── 1.1_如何评价一篇论文的质量.md
-│   │   └── 博士生科研入门辅导.pdf         # 📄 配套讲义（可下载）
-│   ├── 02_Idea_Generation/            # 第二章：Idea的诞生与升华
-│   │   ├── 2.1_Idea的生命周期与能力匹配.md
-│   │   ├── 2.2_想Idea的思路_更高更快更强.md
-│   │   └── 2.3_进阶_如何做颠覆式创新.md
-│   ├── 03_Paper_Writing/              # 第三章：论文写作方法论
-│   │   ├── 3.1_完成一篇科研论文你需要做几件事情.md
-│   │   ├── 3.2_Introduction写作的思考模型.md
-│   │   ├── 3.3_技术类Full_Paper思考模板.md
-│   │   ├── 3.4_Benchmark与Evaluation类论文思考模板.md
-│   │   └── 3.5_写作细节与Checklist.md
-│   ├── 04_Scientific_Plotting/        # 第四章：科研作图指南
-│   │   ├── 4.1_Motivated_Example_Figure.md
-│   │   ├── 4.2_Solution_Overview_Figure.md
-│   │   ├── 4.3_Experimental_Results_Figure.md
-│   │   └── 4.4_绘图Checklist与工具速查表.md
-│   ├── 05_Vibe_Research/              # 第五章：Vibe Research前沿实战
-│   │   ├── 5.1_Vibe_Research与Vibe_Coding入门.md
-│   │   └── 5.2_李伯岩实战经验分享与会议纪要.md
-│   └── 06_Case_Studies/               # 第六章：顶会论文写作剖析案例
-│       ├── 6.1_ICML_2025_Alpha-SQL写作剖析.md
-│       ├── 6.2_ICLR_2025_AFlow写作剖析.md
-│       └── 6.3_VLDB_2026_LEAD写作剖析.md
-│
-├── skills/                            # 🛠️ 提炼出的可执行 AI Skills
-│   ├── idea-evaluator/                # 构思与调研阶段技能
-│   ├── deep-research/
-│   ├── vibe-research-workflow/
-│   ├── supervisor/
-│   ├── delivery-evidence-audit/
-│   ├── supervisor-review/
-│   ├── project-experience-codifier/
-│   ├── computational-method-release-audit/
-│   ├── tech-paper-template/           # 写作阶段技能
-│   ├── intro-drafter/
-│   ├── paper-writer/
-│   ├── benchmark-paper-template/
-│   ├── paper-polish/                  # 自查与润色技能
-│   ├── pre-submission-reviewer/
-│   ├── figure-designer/
-│   ├── rebuttal-guidance/
-│   └── drawio-reconstruction/         # Draw.io 重建执行技能
-│
-└── assets/                            # 图片资源
+├── skills/
+│   ├── supervisor/                 # ⭐ 本 fork：持续工作 + 交付审查 + Token 预算
+│   │   ├── SKILL.md
+│   │   └── references/project-cases.md   # 5 个真实项目反例档案
+│   ├── skill-hygiene/              # ⭐ 本 fork：skill 编写与质检
+│   │   ├── SKILL.md
+│   │   └── references/evidence.md        # 方法实证依据
+│   ├── stats-evidence-audit/       # ⭐ 本 fork：统计证据审查
+│   │   ├── SKILL.md
+│   │   └── references/stats-sources.md
+│   └── <上游原有技能 11 个>          # idea-evaluator, paper-writer, paper-polish 等，见上游 README
+├── handbook/                       # 📖 上游科研与写作系统指南（保留）
+└── assets/                         # 上游图片资源
 ```
 
-### 📖 Handbook：科研与写作系统指南
+## 相关技能生态
 
-> **📄 配套讲义**：[博士生科研入门辅导.pdf](handbook/01_Preliminary/博士生科研入门辅导.pdf) — 本指南的配套 PDF 讲义，适合打印或在 iPad 上阅读，包含完整的科研入门思路框架。
+执行层任务优先调用 **[Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills)**（Apache-2.0）：Nature 风格写作/润色、投稿级科研图（含渲染 QA）、文献逐字段核验（nature-ref-verifier）、返修回复。本 fork 负责判断层（选题、叙事、统计审查、工作流），两仓库互补。
 
+<<<<<<< HEAD
 这里保留了系统性的理论框架，供你深入阅读和系统学习。只有理解了"道"，才能更好地使用"器"。
 
 | 章节 | 内容 | 链接 |
@@ -190,48 +116,14 @@ Supervisor-Skills/
 ## 快速开始 (Quick Start)
 
 把下方这段 Prompt 发给你的 AI 助手（Claude Code、Cursor、Codex 等）即可完成安装：
+=======
+## 快速开始
+>>>>>>> fb7f34a (README: rewrite as HuangShiLab fork (remove upstream promo, own narrative, feature new skills))
 
 ```
-Help me install Supervisor-Skills from https://github.com/HKUSTDial/Supervisor-Skills with Skills.
+Help me install Supervisor-Skills from https://github.com/HuangShiLab/Supervisor-Skills with Skills.
 ```
-
-## 🔗 相关开源项目
-
-除了科研构思与论文写作，下面两个项目可以帮助你进一步分析数据、呈现研究结果。
-
-### 📊 DataMagic：动态图表与数据故事
-
-准备组会、论文汇报或项目演示时，可以从 DataMagic 的动态图表配方库中选择案例，通过配套的 `datamagic` Skill，将趋势、排名、对比等数据组织成动画与数据故事。
-
-选择配方、复制实现指令，再交给 Claude Code、Cursor、Codex 等代码智能体，即可替换自己的数据并调整效果。
-
-[GitHub 仓库](https://github.com/HKUSTDial/DataMagic)
-
-### 🔍 DeepEye：数据分析智能体
-
-面对文件、数据库等多种数据源，DeepEye 可以规划并执行多步骤分析工作流，生成分析报告、交互仪表盘和数据视频，支持查看执行过程并参与调整。
-
-[GitHub 仓库](https://github.com/HKUSTDial/DeepEye)
-
-## 贡献与反馈
-
-这是一款创新的开源 AI Skill 项目。期待能够解决智能体在科研辅助落地中"好用+合规"的问题。
-
-欢迎大家试用、提 PR、开 Issue，或者分享你基于这些 Skill 写出的顶会论文！
-
-如果你觉得这个项目对你有帮助，请点亮右上角的 Star！你的支持是我们持续更新的最大动力。
-
-邮件联系：Yuyu Luo (yuyuluo [AT] hkust-gz.edu.cn).
-
-##
-
-感谢[吴垠](https://openreview.net/profile?id=%7EYin_WU2)、[李伯岩](https://liboyan.vip/)、[谢宇鹏](https://xypkent.github.io/)协助整理该仓库并提供宝贵的建议！
-
-## TODO
-**Guide**
-- 如何写好Rebuttal？审稿人不理我的Rebuttal，怎么办？
-- 如何与他人进行高效的学术合作？
 
 ## License
 
-本项目采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议开源。欢迎非商业用途的分享与改编，但请注明出处。
+上游内容（`handbook/`、`skills/` 下原有技能及 `assets/`）以 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 发布，版权归原作者及 HKUSTDial 团队；本 fork 新增内容（`skills/supervisor/`、`skills/skill-hygiene/`、`skills/stats-evidence-audit/` 及本 README）同样以 CC BY-NC-SA 4.0 发布，署名：Shi Huang / HuangShiLab。
