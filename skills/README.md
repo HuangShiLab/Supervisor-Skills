@@ -42,7 +42,7 @@ Supervisor-Skills 的内容被分成三层，各有各的读者：
 - [delivery-evidence-audit](delivery-evidence-audit/SKILL.md) — 把批注、源表、图表面板和数据来源连成一条可审计证据链
 - [supervisor-review](supervisor-review/SKILL.md) — 在交付前执行范围、证据、渲染产物和可复现性的二值门禁
 - [project-experience-codifier](project-experience-codifier/SKILL.md) — 把重复项目教训转化为事故记录、检查项和可复用技能
-- [computational-method-release-audit](computational-method-release-audit/SKILL.md) — 把方法主张、代码、truth set、benchmark 和数据归档作为同一系统审计
+- [computational-method-release-audit](computational-method-release-audit/SKILL.md) — 把方法主张、代码、truth set、benchmark、metric-complete denominator、bootstrap target 和数据归档作为同一系统审计
 
 ### 主线二：Benchmark / Evaluation 类论文
 

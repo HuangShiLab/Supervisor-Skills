@@ -42,7 +42,7 @@ Following the natural order a PhD student takes for their first top-venue paper:
 - [delivery-evidence-audit](delivery-evidence-audit/SKILL.md) — connect comments, source tables, rendered panels, and raw-data provenance into one auditable chain
 - [supervisor-review](supervisor-review/SKILL.md) — run the final binary release gate across scope, evidence, rendered output, and reproducibility
 - [project-experience-codifier](project-experience-codifier/SKILL.md) — turn repeated project failures into reusable incident records, gates, and skills
-- [computational-method-release-audit](computational-method-release-audit/SKILL.md) — audit a method claim together with its code, truth set, benchmark, and archive release
+- [computational-method-release-audit](computational-method-release-audit/SKILL.md) — audit a method claim together with its code, truth set, benchmark, metric-complete denominators, bootstrap targets, and archive release
 
 ### Track 2: benchmark / evaluation paper
 

@@ -156,7 +156,45 @@ If the full-scale analysis is structural but a biological interpretation is
 taxon-specific, add the minimum interpretability table rather than restating
 the aggregate result.
 
-### Step 6: Audit event-level and biological validation
+### Step 6: Audit metric completeness and estimator scope
+
+Large-census releases often have two different denominators: the catalogue
+denominator and the finite-metric denominator. Do not let a polished summary
+hide this distinction. For every reported prevalence, correlation, accuracy,
+or runtime estimate, record:
+
+1. catalogue units planned or emitted;
+2. units with a usable primary metric;
+3. units with complete primary and covariate metrics;
+4. units retained by thresholds;
+5. units included in timing or other secondary analyses;
+6. the reason each excluded unit is missing, such as no shared landmarks, an
+   unalignable pair, a failed digest, missing ANI, or absent metadata.
+
+Then separate estimators that answer different questions:
+
+| Estimator | Appropriate interpretation |
+|---|---|
+| Pair-level prevalence | Prevalence among the emitted or metric-complete pair population |
+| Cluster-level prevalence | Median or mean behavior of clusters after a stated size rule |
+| Cluster bootstrap | Sensitivity to resampling clusters with unequal pair counts |
+| Leave-one-cluster-out | Sensitivity to the largest absolute contributor |
+| Quality-stratified estimate | Robustness after assembly-quality filters |
+| ANI-stratified estimate | Structural prevalence within a sequence-divergence band |
+
+A bootstrap interval is not a confidence interval for a different estimator.
+If resampling large clusters gives 31% while the pair-weighted estimate is 28%,
+report both as distinct quantities, not as inconsistent estimates of the same
+target. Name the sampling unit, replacement rule, seed, and whether the
+resampling target is pair prevalence, cluster prevalence, or another statistic.
+
+Do not describe a catalogue as complete when the numerator is drawn only from
+metric-complete units. Use wording such as "62,872,901 emitted pairs; 62,872,897
+metric-complete pairs" rather than silently reducing the denominator. Add a
+small exclusion ledger with unit identifiers and exclusion reasons whenever the
+excluded count is nonzero.
+
+### Step 7: Audit event-level and biological validation
 
 Separate each layer:
 
@@ -175,7 +213,7 @@ A controlled simulation may prove mechanism sensitivity. It does not by itself
 prove real-sample prevalence. A large observational census may prove prevalence.
 It does not by itself prove causality or assay performance.
 
-### Step 7: Audit data and code availability
+### Step 8: Audit data and code availability
 
 Confirm that the availability statement names exact objects:
 
@@ -194,7 +232,7 @@ A promise to deposit before publication may satisfy a submission workflow only
 if the venue explicitly permits it and the manuscript states the release
 condition. Otherwise it is a release blocker.
 
-### Step 8: Audit the rendered package
+### Step 9: Audit the rendered package
 
 Open the final PDF, HTML, or submission preview. Check:
 
@@ -206,7 +244,7 @@ Open the final PDF, HTML, or submission preview. Check:
 - no local path, job ID, scratch name, rerun narrative, or unresolved version
   number appears in manuscript prose.
 
-### Step 9: Produce readiness verdict
+### Step 10: Produce readiness verdict
 
 Classify every audit item as:
 
@@ -241,6 +279,8 @@ Then output:
 | CM08 | Event-level, presence-level, coordinate-level, and runtime claims are separated |
 | CM09 | Data and code availability identifiers resolve to the reviewed release |
 | CM10 | The rendered package matches the final source tables and prose |
+| CM11 | Catalogue, metric-complete, threshold-passing, and timing denominators are separated |
+| CM12 | Sampling unit, estimator, replacement rule, seed, and uncertainty target are stated for every bootstrap or sensitivity result |
 
 ## Failure protocol
 
@@ -262,3 +302,11 @@ If any mandatory gate fails:
 - A structural correlation is not coordinate-level event recovery.
 - A software commit hash is not a durable release identifier.
 - A promise of future data deposit is not a resolving DOI.
+- A complete catalogue does not imply a complete finite-metric denominator.
+- A cluster bootstrap interval does not validate a different pair-weighted
+  estimate.
+- A quality-stratified mode count does not establish prevalence unless the
+  prevalence denominator and numerator are also reported.
+
+See: references/census-metric-incidents.md for deidentified incidents and the
+minimum gates derived from them.

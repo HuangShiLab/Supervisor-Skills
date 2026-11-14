@@ -50,7 +50,7 @@
 | EV01 | Does every key claim cite a current source table or validation output? | yes/no |
 | EV02 | Do prose, figure, table, and source file show the same value, unit, and rounding rule? | yes/no |
 | EV03 | Is the expected signal direction stated before inspection? | yes/no |
-| EV04 | Are planned, available, completed, filtered, tested, and timing-eligible units distinguished? | yes/no |
+| EV04 | Are planned, available, catalogue, metric-complete, filtered, tested, and timing-eligible units distinguished? | yes/no |
 | EV05 | Are repeated measures, hosts, batches, or phylogenetically related units modeled or explicitly scoped out? | yes/no |
 | EV06 | Are confidence intervals, uncertainty estimates, or deterministic reproducibility statements appropriate? | yes/no |
 | EV07 | Is contradictory evidence reported rather than silently omitted? | yes/no |

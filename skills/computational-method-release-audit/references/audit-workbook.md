@@ -7,9 +7,10 @@
 3. Truth-set sheet
 4. Benchmark sheet
 5. Aggregate census sheet
-6. Event-level validation sheet
-7. Availability sheet
-8. Verdict and repair plan
+6. Metric completeness and estimator-scope sheet
+7. Event-level validation sheet
+8. Availability sheet
+9. Verdict and repair plan
 
 ## Claim register
 
@@ -125,6 +126,40 @@ Check:
 4. Does ANI, quality, GC, contiguity, or metadata stratification change the
    interpretation?
 
+## Metric completeness and estimator-scope sheet
+
+Use this sheet before reporting any prevalence, correlation, accuracy, or
+sensitivity result derived from a large catalogue.
+
+| Field | Entry |
+|---|---|
+| Catalogue denominator |  |
+| Finite-metric denominator |  |
+| Complete primary and covariate denominator |  |
+| Threshold-passing denominator |  |
+| Timing denominator |  |
+| Excluded rows |  |
+| Exclusion reason ledger |  |
+| Prevalence numerator |  |
+| Headline estimator |  |
+| Sampling unit |  |
+| Replacement rule |  |
+| Replicates and seed |  |
+| Uncertainty target |  |
+| Sensitivity estimator |  |
+| Dominant unit and leave-one-out estimate |  |
+| Evidence file |  |
+
+Record one row per estimate. For each row answer:
+
+1. Does the prose denominator equal the finite-metric row count?
+2. Are catalogue, metric-complete, threshold-passing, and timing counts
+   distinguishable?
+3. Is the bootstrap target the same statistic as the headline estimate?
+4. Are pair-level prevalence and cluster-level sensitivity reported as distinct
+   quantities?
+5. Does the largest-unit removal result accompany the aggregate estimate?
+
 ## Event-level validation sheet
 
 | Event class | Truth definition | Coordinate tolerance | TP | FP | FN | Precision | Recall | F1 |
@@ -175,6 +210,8 @@ Return this table as the final audit output.
 | CM08 Evidence-type separation | pass/blocker |  |  |
 | CM09 Availability | pass/blocker |  |  |
 | CM10 Rendered package | pass/blocker |  |  |
+| CM11 Metric-completeness denominators | pass/blocker |  |  |
+| CM12 Estimator and uncertainty scope | pass/blocker |  |  |
 
 Then state:
 
